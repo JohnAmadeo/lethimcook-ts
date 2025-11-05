@@ -5,4 +5,12 @@
  * Actual implementation will be added in subsequent migration tasks.
  */
 
-export {};
+// Export recipe scaling functionality
+export {
+  Ingredient,
+  Recipe,
+  IngredientSchema,
+  RecipeSchema,
+  scale_recipe,
+  ValueError
+} from './recipe.js';
