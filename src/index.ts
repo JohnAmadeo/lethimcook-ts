@@ -5,6 +5,12 @@
  * Actual implementation will be added in subsequent migration tasks.
  */
 
+// Export converter functionality
+export {
+  convert,
+  _convert_temperature
+} from './converter.js';
+
 // Export recipe scaling functionality
 export {
   Ingredient,
