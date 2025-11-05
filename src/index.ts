@@ -10,3 +10,5 @@ export {
   scale_recipe,
   ValueError,
 } from './recipe';
+
+export { convert_natural } from './natural';
