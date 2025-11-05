@@ -2,5 +2,11 @@
  * LetHimCook - A TypeScript library for unit conversions, especially for cooking.
  */
 
-// Placeholder exports - will be implemented in subsequent migration tasks
-export {};
+export {
+  Ingredient,
+  Recipe,
+  IngredientSchema,
+  RecipeSchema,
+  scale_recipe,
+  ValueError,
+} from './recipe';
