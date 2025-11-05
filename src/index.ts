@@ -1,12 +1,12 @@
-// Placeholder index file for initial build
-// Will be populated during migration
+/**
+ * LetHimCook - A TypeScript library for unit conversions, especially for cooking.
+ */
 
-// Export recipe module
-export {
-  Ingredient,
-  Recipe,
-  IngredientSchema,
-  RecipeSchema,
-  scale_recipe,
-  ValueError
-} from './recipe';
+// Core conversion function
+export { convert } from './converter.js';
+
+// Natural language conversion function
+export { convert_natural } from './natural.js';
+
+// Recipe scaling functionality
+export { scale_recipe, Recipe, Ingredient } from './recipe.js';
