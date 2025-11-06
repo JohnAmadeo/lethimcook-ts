@@ -38,6 +38,14 @@ describe("Natural Language Patterns", () => {
     expect(result.toLowerCase()).toContain("celsius");
   });
 
+  it("should handle reverse temperature conversion", () => {
+    const result = convert_natural("100 celsius to fahrenheit");
+    expect(result).toContain("100");
+    expect(result.toLowerCase()).toContain("celsius");
+    expect(result.toLowerCase()).toContain("fahrenheit");
+    expect(result).toContain("212");
+  });
+
   it("should be case insensitive", () => {
     const result1 = convert_natural("2 CUPS to ML");
     const result2 = convert_natural("2 cups to ml");
