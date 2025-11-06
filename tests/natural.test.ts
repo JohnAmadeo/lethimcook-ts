@@ -46,6 +46,22 @@ describe("Natural Language Patterns", () => {
     expect(result).toContain("212");
   });
 
+  it("should handle temperature conversion with convert pattern", () => {
+    const result = convert_natural("convert 32 fahrenheit to celsius");
+    expect(result).toContain("32");
+    expect(result.toLowerCase()).toContain("fahrenheit");
+    expect(result.toLowerCase()).toContain("celsius");
+    expect(result).toContain("0");
+  });
+
+  it("should handle temperature conversion with how many pattern", () => {
+    const result = convert_natural("how many celsius in 212 fahrenheit");
+    expect(result).toContain("212");
+    expect(result.toLowerCase()).toContain("fahrenheit");
+    expect(result.toLowerCase()).toContain("celsius");
+    expect(result).toContain("100");
+  });
+
   it("should be case insensitive", () => {
     const result1 = convert_natural("2 CUPS to ML");
     const result2 = convert_natural("2 cups to ml");
