@@ -1,0 +1,54 @@
+{
+  "name": "lethimcook",
+  "version": "0.1.0",
+  "description": "A TypeScript library for unit conversions, especially for cooking",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./converter": {
+      "types": "./dist/converter.d.ts",
+      "import": "./dist/converter.js"
+    },
+    "./units": {
+      "types": "./dist/units.d.ts",
+      "import": "./dist/units.js"
+    },
+    "./recipe": {
+      "types": "./dist/recipe.d.ts",
+      "import": "./dist/recipe.js"
+    },
+    "./natural": {
+      "types": "./dist/natural.d.ts",
+      "import": "./dist/natural.js"
+    }
+  },
+  "bin": {
+    "lethimcook": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "dev": "vitest --watch"
+  },
+  "keywords": [
+    "cooking",
+    "unit-conversion",
+    "recipe"
+  ],
+  "dependencies": {
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@vitest/ui": "^1.0.4",
+    "typescript": "^5.3.3",
+    "vitest": "^1.0.4"
+  }
+}
