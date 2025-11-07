@@ -1,0 +1,49 @@
+{
+  "name": "lethimcook",
+  "version": "0.1.0",
+  "description": "A Node.js library for unit conversions, especially for cooking",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./units": {
+      "types": "./dist/units.d.ts",
+      "default": "./dist/units.js"
+    },
+    "./converter": {
+      "types": "./dist/converter.d.ts",
+      "default": "./dist/converter.js"
+    },
+    "./recipe": {
+      "types": "./dist/recipe.d.ts",
+      "default": "./dist/recipe.js"
+    },
+    "./natural": {
+      "types": "./dist/natural.d.ts",
+      "default": "./dist/natural.js"
+    }
+  },
+  "bin": {
+    "lethimcook": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.8",
+    "@types/node": "^20.10.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.3"
+  }
+}
