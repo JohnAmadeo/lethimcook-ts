@@ -1,0 +1,41 @@
+{
+  "name": "lethimcook",
+  "version": "0.1.0",
+  "description": "A TypeScript library for unit conversions, especially for cooking",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "dev": "tsc --watch"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "cooking",
+    "unit-conversion",
+    "recipe",
+    "measurements"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@vitest/coverage-v8": "^1.0.4",
+    "typescript": "^5.3.3",
+    "vitest": "^1.0.4"
+  },
+  "dependencies": {
+    "zod": "^3.22.4"
+  }
+}
