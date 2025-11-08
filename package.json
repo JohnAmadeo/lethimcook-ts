@@ -1,0 +1,59 @@
+{
+  "name": "lethimcook",
+  "version": "0.1.0",
+  "description": "A JavaScript/TypeScript library for unit conversions, especially for cooking",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./converter": {
+      "import": "./dist/converter.js",
+      "types": "./dist/converter.d.ts"
+    },
+    "./recipe": {
+      "import": "./dist/recipe.js",
+      "types": "./dist/recipe.d.ts"
+    },
+    "./natural": {
+      "import": "./dist/natural.js",
+      "types": "./dist/natural.d.ts"
+    },
+    "./units": {
+      "import": "./dist/units.js",
+      "types": "./dist/units.d.ts"
+    }
+  },
+  "bin": {
+    "lethimcook": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "cooking",
+    "recipes",
+    "unit-conversion",
+    "measurement"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.0.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "zod": "^3.22.0"
+  }
+}
