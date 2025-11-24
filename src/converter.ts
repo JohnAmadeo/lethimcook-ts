@@ -2,7 +2,7 @@
  * Core unit conversion functionality.
  */
 
-import { CONVERSIONS, UnitType, getUnitType, normalizeUnit } from "./units";
+import { CONVERSIONS, UnitType, getUnitType, normalizeUnit } from "./units.js";
 
 /**
  * Convert a value from one unit to another.
