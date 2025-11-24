@@ -2,7 +2,7 @@
  * Natural language conversion utility using regex and string matching.
  */
 
-import { convert } from "./converter";
+import { convert } from "./converter.js";
 
 /**
  * Format a number, removing .0 for integers.
