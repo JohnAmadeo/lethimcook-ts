@@ -1,0 +1,69 @@
+/**
+ * Natural language conversion utility using regex and string matching.
+ */
+
+import { convert } from "./converter";
+
+/**
+ * Format a number, removing .0 for integers.
+ */
+function _format_number(value: number): string {
+  if (value === Math.floor(value)) {
+    return Math.floor(value).toString();
+  }
+  return value.toString();
+}
+
+/**
+ * Convert using natural language input.
+ *
+ * Supports patterns like:
+ * - "2 cups to ml"
+ * - "convert 1.5 pounds to grams"
+ * - "how many ml in 3 teaspoons"
+ * - "5 fahrenheit to celsius"
+ *
+ * @param text - Natural language conversion request
+ * @returns Formatted string with conversion result
+ * @throws Error if the input cannot be parsed
+ */
+export function convert_natural(text: string): string {
+  text = text.toLowerCase().trim();
+
+  // Pattern 1: "X unit to unit" or "X unit in unit"
+  const pattern1 = /(\d+\.?\d*)\s+([a-z\s]+?)\s+(?:to|in)\s+([a-z\s]+)/;
+  const match1 = text.match(pattern1);
+  if (match1) {
+    const value = parseFloat(match1[1]);
+    const from_unit = match1[2].trim();
+    const to_unit = match1[3].trim();
+    const result = convert(value, from_unit, to_unit);
+    return `${_format_number(value)} ${from_unit} = ${result.toFixed(2)} ${to_unit}`;
+  }
+
+  // Pattern 2: "convert X unit to unit"
+  const pattern2 = /convert\s+(\d+\.?\d*)\s+([a-z\s]+?)\s+to\s+([a-z\s]+)/;
+  const match2 = text.match(pattern2);
+  if (match2) {
+    const value = parseFloat(match2[1]);
+    const from_unit = match2[2].trim();
+    const to_unit = match2[3].trim();
+    const result = convert(value, from_unit, to_unit);
+    return `${_format_number(value)} ${from_unit} = ${result.toFixed(2)} ${to_unit}`;
+  }
+
+  // Pattern 3: "how many unit in X unit"
+  const pattern3 = /how\s+many\s+([a-z\s]+?)\s+in\s+(\d+\.?\d*)\s+([a-z\s]+)/;
+  const match3 = text.match(pattern3);
+  if (match3) {
+    const to_unit = match3[1].trim();
+    const value = parseFloat(match3[2]);
+    const from_unit = match3[3].trim();
+    const result = convert(value, from_unit, to_unit);
+    return `${_format_number(value)} ${from_unit} = ${result.toFixed(2)} ${to_unit}`;
+  }
+
+  throw new Error(
+    `Could not parse conversion request: ${text}\nTry formats like: '2 cups to ml' or 'convert 1 pound to grams'`
+  );
+}
