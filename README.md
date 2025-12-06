@@ -4,3 +4,71 @@ This repository will contain translated/modified content from the source reposit
 
 Source: https://github.com/JohnAmadeo/lethimcook.git
 Created: Tue Nov  4 02:13:07 UTC 2025
+
+## Hello World in 10 Languages
+
+### Python
+```python
+print("Hello World")
+```
+
+### JavaScript
+```javascript
+console.log("Hello World");
+```
+
+### TypeScript
+```typescript
+console.log("Hello World");
+```
+
+### Java
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
+```
+
+### C++
+```cpp
+#include <iostream>
+int main() {
+    std::cout << "Hello World" << std::endl;
+    return 0;
+}
+```
+
+### Ruby
+```ruby
+puts "Hello World"
+```
+
+### Go
+```go
+package main
+import "fmt"
+func main() {
+    fmt.Println("Hello World")
+}
+```
+
+### Rust
+```rust
+fn main() {
+    println!("Hello World");
+}
+```
+
+### PHP
+```php
+<?php
+echo "Hello World";
+?>
+```
+
+### Swift
+```swift
+print("Hello World")
+```
